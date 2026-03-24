@@ -311,7 +311,7 @@ const Footer = () => {
                 isEmailFocused ? 'text-brand-dark-gray' : 'text-brand-light-gray'
               }`}
             >
-              Made with ❤️ in Lagos, Nigeria
+              Made with ❤️ in Nigeria
             </p>
           </div>
         </div>

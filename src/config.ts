@@ -1005,7 +1005,7 @@ export const developerCreditConfig: DeveloperCreditConfig = {
   title: "Full Stack AI Developer",
   nationality: "Nigerian",
   flag: "🇳🇬",
-  description: "Proudly built in Lagos, Nigeria. VisionAR represents the future of African innovation in healthcare technology.",
+  description: "Proudly built in Nigeria. VisionAR represents the future of African innovation in healthcare technology.",
   skills: ["React", "TypeScript", "Three.js", "TensorFlow", "AR/VR", "Node.js", "AWS"],
   quote: "Bringing African innovation to global healthcare technology. Every line of code is crafted with passion to improve lives across our continent and beyond.",
   ctaText: "Let's Build Together",

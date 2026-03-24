@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Code2, Cpu, Globe, Sparkles, ExternalLink, Heart, MapPin } from 'lucide-react';
+import { Code2, Cpu, Globe, Sparkles, ExternalLink, Heart } from 'lucide-react';
 import { developerCreditConfig } from '@/config';
 import { MagneticButton } from '@/components/MagneticButton';
 
@@ -29,7 +29,7 @@ export default function DeveloperCredit() {
     if (!section || !content || !flag) return;
 
     const ctx = gsap.context(() => {
-      // Content animation
+      // Content animation with scroll trigger
       gsap.fromTo(
         content.querySelectorAll('.animate-item'),
         { y: 60, opacity: 0 },
@@ -41,7 +41,7 @@ export default function DeveloperCredit() {
           ease: 'power3.out',
           scrollTrigger: {
             trigger: content,
-            start: 'top 70%',
+            start: 'top 75%',
             toggleActions: 'play none none reverse',
           },
         }
@@ -56,7 +56,7 @@ export default function DeveloperCredit() {
         ease: 'sine.inOut',
       });
 
-      // Skills animation
+      // Skills animation with scroll trigger
       gsap.fromTo(
         content.querySelectorAll('.skill-item'),
         { scale: 0, opacity: 0 },
@@ -99,18 +99,15 @@ export default function DeveloperCredit() {
     <section
       id="developer"
       ref={sectionRef}
-      className="relative py-24 md:py-32 bg-gradient-to-br from-brand-linen via-brand-sage/5 to-brand-gold/10 overflow-hidden"
+      className="relative py-20 md:py-32 bg-gradient-to-br from-brand-linen via-brand-sage/5 to-brand-gold/10 overflow-hidden"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-sage/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-brand-gold/10 rounded-full blur-3xl" />
-        
-        {/* Nigerian flag colors subtle background */}
-        <div className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-green-600/20 via-white/20 to-green-600/20" />
       </div>
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-6 lg:px-12">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12">
         <div ref={contentRef} className="text-center">
           {/* Section Label */}
           <span className="animate-item inline-flex items-center gap-2 px-4 py-2 bg-brand-forest/10 rounded-full text-sm font-medium text-brand-forest mb-8">
@@ -124,50 +121,43 @@ export default function DeveloperCredit() {
             className="animate-item inline-block mb-8"
             style={{ perspective: '500px', transformStyle: 'preserve-3d' }}
           >
-            <div className="text-8xl md:text-9xl filter drop-shadow-lg">
+            <div className="text-7xl sm:text-8xl md:text-9xl filter drop-shadow-lg">
               {developerCreditConfig.flag}
             </div>
           </div>
 
           {/* Name & Title */}
-          <h2 className="animate-item font-display text-5xl md:text-6xl lg:text-7xl text-brand-forest mb-4">
+          <h2 className="animate-item font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-brand-forest mb-4">
             {developerCreditConfig.name}
           </h2>
           
-          <div className="animate-item flex items-center justify-center gap-3 mb-6">
-            <MapPin className="w-5 h-5 text-brand-sage" />
-            <span className="text-xl text-brand-forest/80">
-              {developerCreditConfig.nationality} {developerCreditConfig.flag}
-            </span>
-          </div>
-          
-          <p className="animate-item text-2xl text-brand-forest/70 mb-4">
+          <p className="animate-item text-xl sm:text-2xl text-brand-forest/70 mb-4">
             {developerCreditConfig.title}
           </p>
 
-          <p className="animate-item text-lg text-brand-forest/60 max-w-2xl mx-auto mb-10">
+          <p className="animate-item text-base sm:text-lg text-brand-forest/60 max-w-2xl mx-auto mb-10">
             {developerCreditConfig.description}
           </p>
 
           {/* Quote */}
-          <div className="quote-block relative max-w-3xl mx-auto mb-12 p-8 bg-white/50 backdrop-blur-sm rounded-2xl border border-brand-sage/20">
-            <div className="absolute -top-4 left-8 text-6xl text-brand-gold/30 font-serif">"</div>
-            <p className="text-xl md:text-2xl text-brand-forest/80 italic leading-relaxed">
+          <div className="quote-block relative max-w-3xl mx-auto mb-12 p-6 sm:p-8 bg-white/50 backdrop-blur-sm rounded-2xl border border-brand-sage/20">
+            <div className="absolute -top-3 sm:-top-4 left-6 sm:left-8 text-5xl sm:text-6xl text-brand-gold/30 font-serif">"</div>
+            <p className="text-lg sm:text-xl md:text-2xl text-brand-forest/80 italic leading-relaxed">
               {developerCreditConfig.quote}
             </p>
-            <div className="absolute -bottom-4 right-8 text-6xl text-brand-gold/30 font-serif rotate-180">"</div>
+            <div className="absolute -bottom-3 sm:-bottom-4 right-6 sm:right-8 text-5xl sm:text-6xl text-brand-gold/30 font-serif rotate-180">"</div>
           </div>
 
           {/* Skills */}
-          <div className="skills-grid flex flex-wrap justify-center gap-3 mb-12">
+          <div className="skills-grid flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
             {developerCreditConfig.skills.map((skill, index) => {
               const Icon = skillIcons[skill] || Code2;
               return (
                 <div
                   key={index}
-                  className="skill-item flex items-center gap-2 px-4 py-2 bg-brand-forest text-brand-linen rounded-full text-sm font-medium"
+                  className="skill-item flex items-center gap-2 px-3 sm:px-4 py-2 bg-brand-forest text-brand-linen rounded-full text-xs sm:text-sm font-medium"
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className="w-3 h-3 sm:w-4 sm:h-4" />
                   {skill}
                 </div>
               );
@@ -176,16 +166,16 @@ export default function DeveloperCredit() {
 
           {/* CTA */}
           <MagneticButton
-            className="animate-item inline-flex items-center gap-2 px-8 py-4 bg-brand-gold text-brand-forest rounded-full font-bold hover:bg-brand-forest hover:text-brand-linen transition-colors"
+            className="animate-item inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-brand-gold text-brand-forest rounded-full font-bold hover:bg-brand-forest hover:text-brand-linen transition-colors"
           >
             {developerCreditConfig.ctaText}
-            <ExternalLink className="w-5 h-5" />
+            <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
           </MagneticButton>
 
           {/* Footer note */}
           <div className="animate-item mt-16 pt-8 border-t border-brand-forest/10">
-            <p className="flex items-center justify-center gap-2 text-brand-forest/50">
-              Made with <Heart className="w-4 h-4 text-red-500 fill-current" /> in Lagos, Nigeria
+            <p className="flex items-center justify-center gap-2 text-sm text-brand-forest/50">
+              Made with <Heart className="w-4 h-4 text-red-500 fill-current" /> in Nigeria
             </p>
           </div>
         </div>
