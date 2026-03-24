@@ -265,9 +265,36 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Developer Credit Banner */}
+        <div
+          className={`mt-12 mb-8 p-6 rounded-2xl transition-colors duration-500 ${
+            isEmailFocused ? 'bg-brand-dark-gray/30' : 'bg-brand-sage/10'
+          }`}
+        >
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
+            <span className="text-3xl">🇳🇬</span>
+            <div>
+              <p
+                className={`font-roboto text-sm font-medium transition-colors duration-500 ${
+                  isEmailFocused ? 'text-brand-linen' : 'text-brand-forest'
+                }`}
+              >
+                {footerConfig.developerCredit}
+              </p>
+              <p
+                className={`font-roboto text-xs mt-1 transition-colors duration-500 ${
+                  isEmailFocused ? 'text-brand-light-gray' : 'text-brand-forest/60'
+                }`}
+              >
+                {footerConfig.credit}
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
         <div
-          className={`mt-16 pt-8 border-t transition-colors duration-500 ${
+          className={`pt-8 border-t transition-colors duration-500 ${
             isEmailFocused ? 'border-brand-dark-gray' : 'border-brand-border'
           }`}
         >
@@ -284,7 +311,7 @@ const Footer = () => {
                 isEmailFocused ? 'text-brand-dark-gray' : 'text-brand-light-gray'
               }`}
             >
-              {footerConfig.credit}
+              Made with ❤️ in Lagos, Nigeria
             </p>
           </div>
         </div>

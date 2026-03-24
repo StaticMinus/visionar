@@ -8,13 +8,20 @@ import CustomCursor from '@/components/CustomCursor';
 import NoiseOverlay from '@/components/NoiseOverlay';
 import Navigation from '@/sections/Navigation';
 import HeroSection from '@/sections/HeroSection';
+import ShopSection from '@/sections/ShopSection';
+import VirtualTryOn from '@/sections/VirtualTryOn';
+import MobileApp from '@/sections/MobileApp';
+import MedicalGrade from '@/sections/MedicalGrade';
 import LatestArticles from '@/sections/LatestArticles';
-import ArtCategory from '@/sections/ArtCategory';
+import DoctorsSection from '@/sections/DoctorsSection';
+import TestimonialsSection from '@/sections/TestimonialsSection';
+import GallerySection from '@/sections/GallerySection';
 import LifestyleSection from '@/sections/LifestyleSection';
 import DesignSection from '@/sections/DesignSection';
 import GreenTribe from '@/sections/GreenTribe';
 import AuthorsSection from '@/sections/AuthorsSection';
 import InstagramGallery from '@/sections/InstagramGallery';
+import DeveloperCredit from '@/sections/DeveloperCredit';
 import Footer from '@/sections/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -81,11 +88,29 @@ function App() {
         {/* Hero Section - Split Screen Perspective Theater */}
         <HeroSection />
 
-        {/* Latest Articles - Horizontal Dynamic Flow */}
+        {/* Shop Section - E-Commerce */}
+        <ShopSection />
+
+        {/* Virtual Try-On Section */}
+        <VirtualTryOn />
+
+        {/* Mobile App Download Section */}
+        <MobileApp />
+
+        {/* Medical Grade Section */}
+        <MedicalGrade />
+
+        {/* Latest Collections - Horizontal Dynamic Flow */}
         <LatestArticles />
 
-        {/* Art Category - Fixed Sidebar with Reveal */}
-        <ArtCategory />
+        {/* Doctors Section */}
+        <DoctorsSection />
+
+        {/* Testimonials Section */}
+        <TestimonialsSection />
+
+        {/* 3D Gallery Section */}
+        <GallerySection />
 
         {/* Lifestyle - Scattered Polaroid Chaos */}
         <LifestyleSection />
@@ -101,6 +126,9 @@ function App() {
 
         {/* Instagram Gallery - 3D Tunnel */}
         <InstagramGallery />
+
+        {/* Developer Credit - David Ola */}
+        <DeveloperCredit />
       </main>
 
       {/* Footer - Curtain Reveal */}
